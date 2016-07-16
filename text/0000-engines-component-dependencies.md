@@ -35,7 +35,8 @@ export default Engine.extend({
 
   dependencies: {
     components: [
-      'custom-button'
+      'custom-button',
+      'custom-heading'
     ]
   }
 });
@@ -45,6 +46,8 @@ export default Engine.extend({
 ### Fulfilling Dependencies (Consuming Application/Engine)
 
 Consuming applications/engines would be required to fulfil the component dependencies declared by the engine. This would also work exactly the same as fulfilling service dependencies in engines today.
+
+In order to mitigate the risk of naming collisions, it would be possible to re-map component dependencies to a custom key. See the 'heading' component dependency in the example below.
 
 ```js
 
@@ -59,7 +62,8 @@ App = Ember.Application.extend({
     emberBlog: {
       dependencies: {
         components: [
-          'custom-button'
+          'custom-button',
+          {'heading': 'custom-heading'}
         ]
       }
     }
