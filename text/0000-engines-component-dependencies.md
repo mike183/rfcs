@@ -47,7 +47,7 @@ export default Engine.extend({
 
 Consuming applications/engines would be required to fulfil the component dependencies declared by the engine. This would also work exactly the same as fulfilling service dependencies in engines today.
 
-In order to mitigate the risk of naming collisions, it would be possible to re-map component dependencies to a custom key. See the 'heading' component dependency in the example below.
+Note that it would also be possible to re-map component dependencies, this would allow components to be referred to by a different name in an engine than in the consuming application/engine. For example, the `heading` component dependency in the example below would be referred to as `heading` in the engine and `custom-heading` in the consuming application/engine.
 
 ```js
 
